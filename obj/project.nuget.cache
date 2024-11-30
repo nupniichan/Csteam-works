@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "ob5FlbQH2lA=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\nup\\source\\repos\\steamapi\\steamapi\\steamapi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nup\\.nuget\\packages\\system.configuration.configurationmanager\\9.0.0\\system.configuration.configurationmanager.9.0.0.nupkg.sha512",
+    "C:\\Users\\nup\\.nuget\\packages\\system.diagnostics.eventlog\\9.0.0\\system.diagnostics.eventlog.9.0.0.nupkg.sha512",
+    "C:\\Users\\nup\\.nuget\\packages\\system.runtime.caching\\9.0.0\\system.runtime.caching.9.0.0.nupkg.sha512",
+    "C:\\Users\\nup\\.nuget\\packages\\system.security.cryptography.protecteddata\\9.0.0\\system.security.cryptography.protecteddata.9.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
