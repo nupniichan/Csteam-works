@@ -5,10 +5,10 @@ using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Runtime.Caching;
-using steamapi.Models.Response;
-using steamapi.Models.App;
+using csteamworks.Models.Response;
+using csteamworks.Models.App;
 
-namespace steamapi.Services
+namespace csteamworks.Services
 {
     public class SteamApp
     {

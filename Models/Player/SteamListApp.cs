@@ -1,11 +1,11 @@
-﻿using steamapi.Models.App;
+﻿using csteamworks.Models.App;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace steamapi.Models.Player
+namespace csteamworks.Models.Player
 {
     public class SteamListApp
     {

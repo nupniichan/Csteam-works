@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace steamapi.Models.Player
+namespace csteamworks.Models.Player
 {
     public class SteamUserId
     {

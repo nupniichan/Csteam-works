@@ -1,4 +1,4 @@
-﻿namespace steamapi.Models.App
+﻿namespace csteamworks.Models.App
 {
     public class MovieFormats
     {

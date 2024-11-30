@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("steamapi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4671aca39fcb995f3d24dcc60e1740103e3badc3")]
 [assembly: System.Reflection.AssemblyProductAttribute("steamapi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("steamapi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,11 +1,11 @@
-﻿using steamapi.Models.Player;
+﻿using csteamworks.Models.Player;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace steamapi.Models.Response
+namespace csteamworks.Models.Response
 {
     public class RecentlyPlayedGamesResponse
     {

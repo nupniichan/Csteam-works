@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace steamapi.Models.Response
+namespace csteamworks.Models.Response
 {
     public class UserSummariesResponse
     {

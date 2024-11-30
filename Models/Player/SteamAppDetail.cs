@@ -1,9 +1,9 @@
-﻿using steamapi.Models.App;
+﻿using csteamworks.Models.App;
 using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace steamapi.Models.Player
+namespace csteamworks.Models.Player
 {
     public class SteamAppDetail
     {

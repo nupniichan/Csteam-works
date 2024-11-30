@@ -1,6 +1,6 @@
-﻿using steamapi.Models.App;
+﻿using csteamworks.Models.App;
 
-namespace steamapi.Models.Player
+namespace csteamworks.Models.Player
 {
     public class RecentlyPlayedGames
     {

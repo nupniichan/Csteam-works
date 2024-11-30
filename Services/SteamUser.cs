@@ -1,13 +1,13 @@
-﻿using steamapi.Models.App;
-using steamapi.Models.Player;
-using steamapi.Models.Response;
+﻿using csteamworks.Models.App;
+using csteamworks.Models.Player;
+using csteamworks.Models.Response;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace steamapi.Services
+namespace csteamworks.Services
 {
     public class SteamUser
     {

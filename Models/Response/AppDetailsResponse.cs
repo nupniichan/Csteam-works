@@ -1,7 +1,7 @@
-﻿using steamapi.Models.Player;
+﻿using csteamworks.Models.Player;
 using System.Text.Json.Serialization;
 
-namespace steamapi.Models.Response
+namespace csteamworks.Models.Response
 {
     public class AppDetailsResponse
     {
