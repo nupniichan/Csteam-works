@@ -1,118 +1,110 @@
 # Csteam-works Integration Library
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![.NET](https://img.shields.io/badge/.NET-5C2D91?style=badge&logo=.net&logoColor=white)](https://dotnet.microsoft.com)
+
+
 ## Introduction
-This project provides a way to interact with the Steam API, allowing you to retrieve some basic information such as games, players, and other related data.
+
+This project provides a C# library for interacting with the Steam Web API, enabling easy retrieval of basic Steam information such as games, players, and related data.  It leverages caching for improved performance.
 
 ## Features
-The library includes the following services:
 
-### 1. SteamApp
-- **GetSteamAppIdData(string searchKeyword)**: Retrieves a list of Steam applications based on a search keyword. It caches the results for 6 hours to improve performance.
-- **GetSteamAppDetails(int appid, string currency)**: Fetches detailed information about a specific Steam application using its app ID and optional currency parameter.
-- **GetCurrentPlayerCount(int appId)**: Retrieves the current number of players for a specific Steam application.
+The library offers the following services:
 
-### 2. SteamUser
-- **GetUserID(string key, string username)**: Resolves a Steam username to a Steam user ID using the provided API key.
-- **GetPlayerSummaries(string key, string steamId)**: Fetches detailed summaries of a Steam player using their Steam ID.
-- **GetRecentlyPlayedGames(string key, string steamId)**: Retrieves a list of games that the specified user has played recently.
-- **GetOwnedGames(string key, string steamId)**: Fetches a list of games owned by the specified user.
+### SteamApp
+
+* **`GetSteamAppIdData(string searchKeyword)`:** Retrieves a list of Steam applications based on a search keyword.  Results are cached for 6 hours.
+* **`GetSteamAppDetails(int appid, string currency)`:** Fetches detailed information about a specific Steam application using its App ID.  Allows specifying an optional currency parameter.
+* **`GetCurrentPlayerCount(int appId)`:** Retrieves the current number of players for a specified Steam application.
+
+### SteamUser
+
+* **`GetUserID(string key, string username)`:** Resolves a Steam username to a Steam User ID using a provided API key.
+* **`GetPlayerSummaries(string key, string steamId)`:** Retrieves detailed summaries for a Steam player using their Steam ID.
+* **`GetRecentlyPlayedGames(string key, string steamId)`:**  Retrieves a list of games recently played by a specified user.
+* **`GetOwnedGames(string key, string steamId)`:** Fetches a list of games owned by a specified user.
+
 
 ## Installation
 
 ### Requirements
-- .NET 5.0 or higher (.NET 9 is better)
-- Your location is not blocked to access steam
-- Steam key (you can get it on [here](https://steamcommunity.com/dev/apikey))
 
-### Installing the Project
-1. Clone the repository:
+* .NET 9
+* Your location access to Steam is not blocked
+* A Steam Web API key (you can get one from [here](https://steamcommunity.com/dev/apikey))
+
+### Installation Steps
+
+1. **Install via NuGet (Recommended) (I'm working on it):**  This is the easiest way to install the library.  You can add it to your project directly through your IDE's NuGet package manager. (The package name will be `Csteam-works` -  you'll need to publish this to NuGet first if you want to use this method.)
+
+2. **Manual Installation (Alternative):**
    ```bash
    git clone https://github.com/yourusername/Csteam-works.git
    cd Csteam-works
-   ```
-
-2. Install the necessary packages:
-   ```bash
    dotnet restore
    ```
+   Then, add the project as a reference to your own project.
 
-## Usage
+## Example Usage
 
 ### 1. Retrieve Steam App Information
-Use the `SteamAppInformation` class to fetch information about Steam applications.
 
-#### Example:
 ```csharp
-using steamapi.Services;
+using Csteam-works.Services;
 
-var steamAppInfo = new SteamAppInformation();
+var steamAppInfo = new SteamApp();
 var apps = await steamAppInfo.GetSteamAppIdData("searchKeyword");
+foreach (var app in apps)
+{
+    Console.WriteLine($"App ID: {app.appid}, Name: {app.name}");
+}
 ```
 
 ### 2. Retrieve Steam User Information
-Use the `SteamUser` class to fetch information about Steam users.
 
-#### Example:
 ```csharp
-using steamapi.Services;
+using Csteam-works.Services;
 
 var steamUserInfo = new SteamUser();
-var userId = await steamUserInfo.GetUserID("your_api_key", "username");
-var playerSummaries = await steamUserInfo.GetPlayerSummaries("your_api_key", userId.steamid);
+var userId = await steamUserInfo.GetUserID("YOUR_API_KEY", "username");
+if (userId != null)
+{
+    var playerSummaries = await steamUserInfo.GetPlayerSummaries("YOUR_API_KEY", userId.steamid);
+    Console.WriteLine($"Player Name: {playerSummaries.response.players[0].personaname}");
+}
 ```
+You can see more function at **SteamUser** and **SteamApp** class
 
-### 3. Retrieve Recently Played Games
-```csharp
-var recentlyPlayedGames = await steamUserInfo.GetRecentlyPlayedGames("your_api_key", userId.steamid);
-```
+Remember to replace `"YOUR_API_KEY"` with your actual Steam Web API key. Similar to the others method that needed
 
-### 4. Retrieve Owned Games
-```csharp
-var ownedGames = await steamUserInfo.GetOwnedGames("your_api_key", userId.steamid);
-```
 
 ## Directory Structure
+
 ```
-/steamapi
-│
-├── /Models
-│   ├── /GameModels
-│   ├── /PlayerModels
-│   ├── /ResponseModels
-│   └── /MiscModels
-│
-└── /Services
+Csteam-works/
+├── Models/
+│   ├── App/
+│   ├── Player/
+│   ├── Response/
+└── Services/
     ├── SteamAppInformation.cs
     └── SteamUser.cs
 ```
 
 ## Contributing
-We welcome contributions to this project! Here’s how you can help:
 
-1. **Fork the repository**: Click on the "Fork" button at the top right of the repository page.
-2. **Clone your fork**: 
-   ```bash
-   git clone https://github.com/yourusername/Csteam-works.git
-   cd Csteam-works
-   ```
-3. **Create a new branch**: 
-   ```bash
-   git checkout -b feature/YourFeatureName
-   ```
-4. **Make your changes**: Implement your feature or fix a bug.
-5. **Commit your changes**: 
-   ```bash
-   git commit -m "Add your message here"
-   ```
-6. **Push to your fork**: 
-   ```bash
-   git push origin feature/YourFeatureName
-   ```
-7. **Create a pull request**: Go to the original repository and click on "New Pull Request".
+I always welcome any contributions :D. Feel free to get involved!
+
+## License
+
+[MIT License](https://github.com/nupniichan/Csteam-works/blob/main/LICENSE)
 
 ## References
-- [Steam Web API Documentation](https://developer.valvesoftware.com/wiki/Steam_Web_API)
-- [Microsoft.Extensions.Caching.Memory](https://www.nuget.org/packages/microsoft.extensions.caching.memory/)
+[.NET](https://github.com/dotnet/runtime)
+[Microsoft.Extensions.Caching.Memory](https://www.nuget.org/packages/microsoft.extensions.caching.memory/)
+[Steam Web Api](https://partner.steamgames.com/doc/webapi_overview)
 
 ## Contact
-If you have any questions, please contact me at: your.email@example.com.
+
+For any questions or issues, please open an issue on this GitHub repository.
