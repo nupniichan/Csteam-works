@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace csteamworks.Services
 {
-    public class SteamUser
+    public class CsSteamUser
     {
         public async Task<SteamUserId> GetUserID(string key, string username)
         {

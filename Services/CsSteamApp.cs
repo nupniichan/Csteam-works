@@ -10,7 +10,7 @@ using csteamworks.Models.App;
 
 namespace csteamworks.Services
 {
-    public class SteamApp
+    public class CsSteamApp
     {
         private static readonly MemoryCache _cache = MemoryCache.Default;
         private const string SteamAppsCacheKey = "SteamAppsCache";
