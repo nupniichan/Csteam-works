@@ -6,25 +6,24 @@
 
 ## Introduction
 
-This project provides a C# library for interacting with the Steam Web API, enabling easy retrieval of basic Steam information such as games, players, and related data.  It leverages caching for improved performance.
+This project provides a C# library for interacting with the Steam Web API, enabling easy retrieval of basic Steam information such as games, players, and related data. It leverages caching for improved performance.
 
 ## Features
 
 The library offers the following services:
 
-### SteamApp
+### CsSteamApp
 
-* **`GetSteamAppIdData(string searchKeyword)`:** Retrieves a list of Steam applications based on a search keyword.  Results are cached for 6 hours.
-* **`GetSteamAppDetails(int appid, string currency)`:** Fetches detailed information about a specific Steam application using its App ID.  Allows specifying an optional currency parameter.
+* **`GetSteamAppIdData(string searchKeyword)`:** Retrieves a list of Steam applications based on a search keyword. Results are cached for 6 hours and limited to 25 results.
+* **`GetSteamAppDetails(int appid, string currency = "vn")`:** Fetches detailed information about a specific Steam application using its App ID. Allows specifying an optional currency parameter (defaults to "vn").
 * **`GetCurrentPlayerCount(int appId)`:** Retrieves the current number of players for a specified Steam application.
 
-### SteamUser
+### CsSteamUser
 
 * **`GetUserID(string key, string username)`:** Resolves a Steam username to a Steam User ID using a provided API key.
 * **`GetPlayerSummaries(string key, string steamId)`:** Retrieves detailed summaries for a Steam player using their Steam ID.
-* **`GetRecentlyPlayedGames(string key, string steamId)`:**  Retrieves a list of games recently played by a specified user.
+* **`GetRecentlyPlayedGames(string key, string steamId)`:** Retrieves a list of games recently played by a specified user.
 * **`GetOwnedGames(string key, string steamId)`:** Fetches a list of games owned by a specified user.
-
 
 ## Installation
 
@@ -36,7 +35,7 @@ The library offers the following services:
 
 ### Installation Steps
 
-1. **Install via NuGet (Recommended) (I'm working on it):**  This is the easiest way to install the library.  You can add it to your project directly through your IDE's NuGet package manager. (The package name will be `Csteam-works` -  you'll need to publish this to NuGet first if you want to use this method.)
+1. **Install via NuGet (Recommended) (I'm working on it):** This is the easiest way to install the library. You can add it to your project directly through your IDE's NuGet package manager. (The package name will be `Csteam-works` - you'll need to publish this to NuGet first if you want to use this method.)
 
 2. **Manual Installation (Alternative):**
    ```bash
@@ -51,9 +50,9 @@ The library offers the following services:
 ### 1. Retrieve Steam App Information
 
 ```csharp
-using Csteam-works.Services;
+using csteamworks.Services;
 
-var steamAppInfo = new SteamApp();
+var steamAppInfo = new CsSteamApp();
 var apps = await steamAppInfo.GetSteamAppIdData("searchKeyword");
 foreach (var app in apps)
 {
@@ -64,20 +63,18 @@ foreach (var app in apps)
 ### 2. Retrieve Steam User Information
 
 ```csharp
-using Csteam-works.Services;
+using csteamworks.Services;
 
-var steamUserInfo = new SteamUser();
+var steamUserInfo = new CsSteamUser();
 var userId = await steamUserInfo.GetUserID("YOUR_API_KEY", "username");
 if (userId != null)
 {
     var playerSummaries = await steamUserInfo.GetPlayerSummaries("YOUR_API_KEY", userId.steamid);
-    Console.WriteLine($"Player Name: {playerSummaries.response.players[0].personaname}");
+    Console.WriteLine($"Player Name: {playerSummaries.personaname}");
 }
 ```
-You can see more function at **SteamUser** and **SteamApp** class
 
 Remember to replace `"YOUR_API_KEY"` with your actual Steam Web API key. Similar to the others method that needed
-
 
 ## Directory Structure
 
@@ -88,8 +85,8 @@ Csteam-works/
 │   ├── Player/
 │   ├── Response/
 └── Services/
-    ├── SteamAppInformation.cs
-    └── SteamUser.cs
+    ├── CsSteamApp.cs
+    └── CsSteamUser.cs
 ```
 
 ## Contributing
