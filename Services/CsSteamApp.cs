@@ -16,11 +16,11 @@ namespace csteamworks.Services
         private const string SteamAppsCacheKey = "SteamAppsCache";
         private static readonly TimeSpan CacheDuration = TimeSpan.FromHours(6);
 
-        public async Task<List<Models.App.SteamApp>> GetSteamAppIdData(string searchKeyword)
+        public async Task<List<SteamApp>> GetSteamAppIdData(string searchKeyword)
         {
             if (_cache.Contains(SteamAppsCacheKey))
             {
-                var cachedApps = (List<Models.App.SteamApp>)_cache.Get(SteamAppsCacheKey);
+                var cachedApps = (List<SteamApp>)_cache.Get(SteamAppsCacheKey);
                 return FilterApps(cachedApps, searchKeyword);
             }
 
@@ -42,7 +42,7 @@ namespace csteamworks.Services
             }
             catch (Exception ex)
             {
-                throw new Exception($"Lỗi khi lấy dữ liệu: {ex.Message}", ex);
+                throw new Exception($"Error while getting data: {ex.Message}", ex);
             }
         }
 
@@ -72,11 +72,11 @@ namespace csteamworks.Services
                     return appResponse;
                 }
 
-                throw new Exception("Không tìm thấy ứng dụng với ID này.");
+                throw new Exception("Can't find with that information.");
             }
             catch (Exception e)
             {
-                throw new Exception($"Lỗi khi lấy dữ liệu: {e.Message}", e);
+                throw new Exception($"Error while getting data: {e.Message}", e);
             }
         }
         private List<Models.App.SteamApp> FilterApps(List<Models.App.SteamApp> apps, string searchKeyword)
@@ -107,12 +107,12 @@ namespace csteamworks.Services
                 }
                 else
                 {
-                    throw new Exception("Không thể lấy số lượng người chơi.");
+                    throw new Exception("Can't get current player count of that game");
                 }
             }
             catch (Exception e)
             {
-                throw new Exception($"Lỗi khi gọi API: {e.Message}", e);
+                throw new Exception($"Error while getting data: {e.Message}", e);
             }
         }
     }

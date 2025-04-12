@@ -28,11 +28,11 @@ namespace csteamworks.Services
                 {
                     return result.response;
                 }
-                throw new Exception("Không tìm thấy user với username này.");
+                throw new Exception("Can't find user with that username.");
             }
             catch (Exception e)
             {
-                throw new Exception($"Lỗi khi lấy dữ liệu: {e.Message}", e);
+                throw new Exception($"Error while getting data: {e.Message}", e);
             }
         }
 
@@ -53,11 +53,11 @@ namespace csteamworks.Services
                 {
                     return playerSummariesResponse.response.players[0];
                 }
-                throw new Exception("Không tìm thấy user với steamid này.");
+                throw new Exception("Can't find user with that steamid.");
             }
             catch (Exception e)
             {
-                throw new Exception($"Lỗi khi lấy dữ liệu: {e.Message}", e);
+                throw new Exception($"Error while getting data: {e.Message}", e);
             }
         }
 
@@ -78,7 +78,7 @@ namespace csteamworks.Services
             }
             catch (Exception e)
             {
-                throw new Exception($"Lỗi khi lấy dữ liệu: {e.Message}", e);
+                throw new Exception($"Error while getting data: {e.Message}", e);
             }
         }
 
@@ -99,7 +99,7 @@ namespace csteamworks.Services
             }
             catch (Exception e)
             {
-                throw new Exception($"Lỗi khi lấy dữ liệu: {e.Message}", e);
+                throw new Exception($"Error while getting data: {e.Message}", e);
             }
         }
     }
