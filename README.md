@@ -1,4 +1,4 @@
-# Csteam-works Integration Library
+# Csteam-works ( Csharp-steam-works )
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![.NET](https://img.shields.io/badge/.NET-9.0-5C2D91?style=flat&logo=.net&logoColor=white)](https://dotnet.microsoft.com)
@@ -6,7 +6,7 @@
 
 ## 📖 Introduction
 
-Csteam-works is a robust C# library for interacting with the Steam Web API, enabling easy retrieval of Steam information including games, players, and related data. It leverages caching for improved performance and provides a clean, straightforward interface for developers.
+Csteam-works is a C# library for interacting with the Steam Web API, enabling easy retrieval of Steam information including games, players, and related data.
 
 ## ✨ Features
 
@@ -33,7 +33,7 @@ The library offers the following services:
 ### Requirements
 
 * .NET 9.0 or later
-* Your location access to Steam is not blocked
+* Your location access to Steam is not blocked ( if so then i suggest use proxy or vpn or something that you can connect to steam )
 * A Steam Web API key (get one from [Steam Developer Portal](https://steamcommunity.com/dev/apikey))
 
 ### Installation Steps
@@ -120,7 +120,7 @@ Csteam-works/
 
 ## 👨‍💻 Contributing
 
-Contributions are always welcome! Whether it's bug fixes, feature enhancements, or documentation improvements, feel free to get involved!
+Contributions are always welcome! Whether it's bug fixes, feature enhancements, or documentation improvements, feel free to create a pull or issue request!
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
@@ -128,15 +128,17 @@ Contributions are always welcome! Whether it's bug fixes, feature enhancements, 
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
+If there's any errors don't hestinate to create issue. I will read it and fix it as soon as possible
+
 ## 📄 License
 
 [MIT License](https://github.com/nupniichan/Csteam-works/blob/main/LICENSE)
 
 ## 📚 References
 - [.NET Documentation](https://docs.microsoft.com/en-us/dotnet/)
-- [Microsoft.Extensions.Caching.Memory](https://docs.microsoft.com/en-us/dotnet/api/microsoft.extensions.caching.memory)
 - [Steam Web API Documentation](https://partner.steamgames.com/doc/webapi_overview)
 - [Steam Store API](https://wiki.teamfortress.com/wiki/User:RJackson/StorefrontAPI)
+- [SteamSpy](https://steamspy.com/)
 
 ## 📞 Contact
 
