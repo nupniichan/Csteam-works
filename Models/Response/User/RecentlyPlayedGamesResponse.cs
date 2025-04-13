@@ -1,4 +1,4 @@
-﻿using csteamworks.Models.Player;
+﻿using csteamworks.Models.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace csteamworks.Models.Response
 {
-    public class UserIdResponse
+    public class RecentlyPlayedGamesResponse
     {
-        public SteamUserId response { get; set; }
+        public RecentlyPlayedGames response { get; set; }
     }
 }

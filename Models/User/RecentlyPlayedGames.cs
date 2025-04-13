@@ -1,6 +1,6 @@
 ﻿using csteamworks.Models.App;
 
-namespace csteamworks.Models.Player
+namespace csteamworks.Models.User
 {
     public class RecentlyPlayedGames
     {

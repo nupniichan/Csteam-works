@@ -8,6 +8,6 @@ namespace csteamworks.Models.Response
 {
     public class UserSummariesResponse
     {
-        public PlayerResponse response { get; set; }
+        public UserResponse response { get; set; }
     }
 }

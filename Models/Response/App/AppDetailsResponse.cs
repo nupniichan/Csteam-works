@@ -1,4 +1,4 @@
-﻿using csteamworks.Models.Player;
+﻿using csteamworks.Models.User;
 using System.Text.Json.Serialization;
 
 namespace csteamworks.Models.Response

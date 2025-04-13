@@ -1,4 +1,4 @@
-﻿using csteamworks.Models.Player;
+﻿using csteamworks.Models.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace csteamworks.Models.Response
 {
-    public class AppListResponse
+    public class UserIdResponse
     {
-        public SteamListApp applist { get; set; }
+        public SteamUserId response { get; set; }
     }
 }

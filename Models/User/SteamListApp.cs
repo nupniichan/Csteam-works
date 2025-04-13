@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace csteamworks.Models.Player
+namespace csteamworks.Models.User
 {
     public class SteamListApp
     {
